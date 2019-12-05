@@ -1,0 +1,19 @@
+eureka:
+  instance:
+    hostname: server1
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://server1:9001/eureka
+  server:
+    # 是否开启自我保护模式
+    enable-self-preservation: false
+    # 15分钟内续约服务的比例小于0.85，则开启自我保护机制，再此期间不会清除已注册的任何服务（即便是无效服务）
+    renewal-percent-threshold: 0.85
+    # 更新续约阈值的间隔（分钟），默认15分钟
+    renewal-threshold-update-interval-ms: 60000
+    # 指定EvictionTask定时任务的调度频率，用于剔除过期的实例
+    eviction-interval-timer-in-ms: 10000
+    # 设置readWriteCacheMap的expireAfterWrite参数，指定写入多长时间后过期
+    response-cache-auto-expiration-in-seconds: 60

@@ -1,0 +1,13 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: eureka-server
+  profiles:
+    active: dev
+  http:
+    converters:
+      preferred-json-mapper: jackson
+  jackson:
+    time-zone: Asia/Shanghai

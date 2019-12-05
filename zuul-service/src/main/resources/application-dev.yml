@@ -1,0 +1,11 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server1:9001/eureka
+
+zuul:
+  routes:
+    api-user:
+      # 反向代理不走okHttp
+      path: /user/**
+      serviceId: user-service
